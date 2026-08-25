@@ -1,40 +1,45 @@
-# Recursion and Sorting Practice
+# Linked Lists Project Summary
 
-This project contains a few small JavaScript algorithms that demonstrate recursive and iterative problem solving.
+## What I have been working on
 
-## Fibonacci sequence: iterative version
+I built a full singly linked list implementation in JavaScript with a dedicated node class and a list class.
 
-The `fibsIterate` function generates the first `n` numbers in the Fibonacci sequence without recursion.
+### Core structure
 
-It starts with two values, `a = 0` and `b = 1`. On each loop iteration, it pushes the current value of `a` to the result array and then updates the pair using:
+- ListNode class with value and next
+- LinkedList class with internal head and tail references
+- Length tracking for efficient size checks
 
-```js
-[a, b] = [b, a + b]
-```
+### Core operations implemented
 
-This keeps moving forward through the sequence until it has produced exactly `n` numbers. If `n` is less than or equal to `0`, it returns an empty array.
+- append(value)
+- prepend(value)
+- insert(index, value)
+- remove(index)
+- pop()
+- shift()
+- size()
+- head()
+- tail()
+- at(index)
+- contains(value)
+- findIndex(value)
+- get(index)
+- set(index, value)
+- clear()
+- isEmpty()
+- toArray()
+- print()
+- toString()
 
-## Fibonacci sequence: recursive version
+### Additional progress
 
-The `fibsRecursive` function solves the problem by breaking it into smaller versions of itself.
+- Refactored internal fields to _head and _tail so head() and tail() can exist as methods without name conflicts
+- Updated indentation style to tabs across the linked list implementation
+- Added a usage example that builds a list of animals and prints it
+- Updated exports to named exports:
+	- export { LinkedList, ListNode }
 
-The base cases are:
-- if `n <= 0`, return an empty array
-- if `n === 1`, return `[0]`
+### Current project status
 
-For larger values, it calls `fibsRecursive(n - 1)` to compute the previous sequence, then adds the next Fibonacci value by looking at the last two numbers in that sequence. This creates a recursive chain until the base case is reached.
-
-## Merge sort
-
-The `mergeSort` function sorts an array using the divide-and-conquer strategy.
-
-It works like this:
-1. Split the array into two halves.
-2. Recursively sort each half.
-3. Merge the two sorted halves back together.
-
-The merge step compares items from the left and right halves and appends the smaller one to a result array until both halves are exhausted. Any remaining items are then added at the end. This produces a fully sorted array.
-
-These functions show two common patterns in programming:
-- iteration for step-by-step loops
-- recursion for breaking a problem into smaller subproblems
+The linked list implementation is feature-complete for common singly linked list operations and ready for testing and extension.
